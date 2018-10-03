@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.papyrus.bpmn.feature"
       label="Papyrus BPMN Feature"
-      version="0.9.2.qualifier"
+      version="0.10.0.qualifier"
       provider-name="Eclipse Modeling Project">
 
    <description url="http://www.example.com/description">
@@ -21,9 +21,9 @@ http://www.eclipse.org/legal/epl-v10.html
    <license url="%licenseURL">
       %license
    </license>
-   
+
    <requires>
-      <import feature="org.eclipse.papyrus.sdk.feature" version="3.0.0" match="compatible"/>
+      <import feature="org.eclipse.papyrus.sdk.feature" version="4.0.0" match="compatible"/>
    </requires>
 
    <plugin
@@ -34,11 +34,11 @@ http://www.eclipse.org/legal/epl-v10.html
          unpack="false"/>
 
    <plugin
-           id="org.eclipse.papyrus.bpmn.architecture"
-           download-size="0"
-           install-size="0"
-           version="0.0.0"
-           unpack="false"/>
+         id="org.eclipse.papyrus.bpmn.architecture"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.eclipse.papyrus.bpmn.diagram.common"
@@ -46,7 +46,7 @@ http://www.eclipse.org/legal/epl-v10.html
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   
+
    <plugin
          id="org.eclipse.papyrus.bpmn.diagram.process"
          download-size="0"

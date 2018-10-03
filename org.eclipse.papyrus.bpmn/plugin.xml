@@ -22,7 +22,7 @@
             description="UML profile for BPMN"
             iconpath="icons/bpmn_16x16.png"
             name="BPMNProfile"
-            path="platform:/plugin/org.eclipse.papyrus.bpmn/model/bpmn.profile.uml"
+            path="pathmap://BPMN_PROF/bpmn.profile.uml"
             provider="CEA List">
       </profile>
    </extension>
@@ -30,7 +30,7 @@
          point="org.eclipse.uml2.uml.generated_package">
       <profile
             location="pathmap://BPMN_PROF/bpmn.profile.uml#_wrG1oHwkEeOWLfCz6n-rOA"
-            uri="pathmap://BPMN_PROF/bpmn.profile.uml">
+            uri="http://www.omg.org/spec/BPMNProfile/20121112/">
       </profile>
    </extension>
     <extension
