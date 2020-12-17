@@ -12,7 +12,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<modules>
 		<module>org.eclipse.papyrus.bpmn.feature</module>
         <module>org.eclipse.papyrus.bpmn.p2</module>
-        <module>org.eclipse.papyrus.bpmn.targetplatform.2019-03</module>
+        <module>org.eclipse.papyrus.bpmn.targetplatform.2020-12</module>
 	</modules>
 
 	

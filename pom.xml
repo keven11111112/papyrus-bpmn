@@ -20,8 +20,8 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.source.version>11</java.source.version>
+		<java.target.version>11</java.target.version>
 		<component.shortname>bpmn</component.shortname>
 		<component.fullartifactId>org.eclipse.papyrus.bpmn</component.fullartifactId>
 		<component.hudson.tabname>bpmn</component.hudson.tabname>
@@ -30,9 +30,13 @@
 		<component.rcp.name>org.eclipse.papyrus.bpmn.rcp</component.rcp.name>
 		<component.apibaseline.url>http://download.eclipse.org/modeling/mdt/papyrus/components/bpmn/0.8.0_papyrus-bpmn-mars_190/</component.apibaseline.url>
 		<component.servicetype>org.eclipse.papyrus.bpmn.service.types</component.servicetype>
-		<eclipse.targetrelease>2019-03</eclipse.targetrelease>
+		<eclipse.targetrelease>2020-12</eclipse.targetrelease>
 		<target.version>${project.version}</target.version>
 		<sonar.exclusions>**/src-gen/**</sonar.exclusions>
+		
+		<tycho-version>2.0.0</tycho-version>
+		<tychoExtrasVersion>2.0.0</tychoExtrasVersion>
+		
 	</properties>
 
 	<modules>
@@ -51,7 +55,7 @@
 
 	<ciManagement>
 		<system>Hudson</system>
-		<url>https://hudson.eclipse.org/papyrus/view/${component.hudson.tabname}/</url>
+		<url>https://ci.eclipse.org/papyrus/view/${component.hudson.tabname}/</url>
 	</ciManagement>
 	<issueManagement>
 		<url>https://bugs.eclipse.org/bugs/buglist.cgi?product=Papyrus&amp;component=${component.bugzilla.name}</url>
@@ -104,14 +108,47 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>eclipse-2019-03</id>
-			<url>http://download.eclipse.org/releases/2019-03</url>
+			<id>eclipse-2020-12</id>
+			<url>http://download.eclipse.org/releases/2020-12</url>
 			<layout>p2</layout>
 		</repository>
 	</repositories>
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
+		<pluginManagement>
+			<!-- redistributed plugin configurations -->
+			<plugins>
+				
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-maven-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<extensions>true</extensions>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<source>${java.source.version}</source>
+						<target>${java.target.version}</target>
+						<optimize>true</optimize>
+						<showWarnings>true</showWarnings>
+						<!-- Tycho build using the project's JDT settings. -->
+						<useProjectSettings>true</useProjectSettings>
+					</configuration>
+				</plugin>
+				
+			</plugins>
+		</pluginManagement>
+		
 	</build>
 
 </project>
